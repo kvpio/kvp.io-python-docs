@@ -25,6 +25,7 @@
 <pre><code>import kvpio
 kvpio.api_key = '123abc'
 account = kvpio.Account().get()
+# {"id": "kvp.io", "email": "support@kvp.io", "reads": 87, "size": 124}
 </code></pre>
 <p>Writing to your bucket:</p>
 <pre><code>data = {
@@ -39,8 +40,9 @@ account = kvpio.Account().get()
 bucket = kvpio.Bucket()
 bucket.set('my_key', data)
 </code></pre>
-<p>Reading from your bucket:</p>
+<p>Reading nested data from your bucket:</p>
 <pre><code>data = bucket.get('my_key/baz/faz')
+# [1, 2, 3]
 </code></pre>
     </div>
     <div class='code'>
@@ -94,7 +96,7 @@ bucket.set('my_key', data)
       <p>The base url of the API, e.g., <em>https://api.kvp.io</em></p>
     </div>
     <div class='code'>
-      <div class="highlight"><pre><span class="n">api_base</span> <span class="o">=</span> <span class="s1">&#39;http://localhost:8000&#39;</span></pre></div>
+      <div class="highlight"><pre><span class="n">api_base</span> <span class="o">=</span> <span class="s1">&#39;https://api.kvp.io&#39;</span></pre></div>
     </div>
   </div>
   <div class='clearall'></div>
